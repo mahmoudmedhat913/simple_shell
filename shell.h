@@ -185,7 +185,7 @@ size_t printlist(const list_t *);
 list_t nodestart(list_t *, char *, char);
 ssize_t nodeindex(list_t *, list_t *);
 int ischain(info_t *, char *, size_t *);
-void chaeckchain(info_t *, char *, size_t *, size_t, size_t);
+void checkchain(info_t *, char *, size_t *, size_t, size_t);
 int changealias(info_t *);
 int changevars(info_t *);
 int changestring(char **, char *);
