@@ -5,20 +5,20 @@
  * @info: Struct conta potential argu. used to maint const function prototype.
  * Return: Always 0
  */
-int _myhetory(info_t *info)
+int _myhistory(info_t *info)
 {
 	print_list(info->history);
 	return (0);
 }
 
 /**
- * unst_alias - wsts alias to str
+ * unset_alias - wsts alias to str
  * @info: Paramet stru
  * @str: the str
  *
  * Return: Always 0 on sucess, 1 on error
  */
-int unset_alias(info_t, char *str)
+int unset_alias(info_t *info, char *str)
 {
 	char *p, c;
 	int ret;
@@ -79,4 +79,34 @@ int print_alias(list_t *node)
 }
 
 /**
- * 
+ * _myalias - mimics the alias builtin (man alias)
+ * @info: Struct containing potential arg . used to maintain const fun prot.
+ * Return: Always 0
+ */
+int _myalias(info_t *info)
+{
+	int i = 0;
+	char *p = NULL;
+	list_t *node = NULL;
+
+	if (info->argc == 1)
+	{
+		node = info->alias;
+		while (node)
+		{
+			print_alias(node);
+			node = node->next;
+		}
+		return (0);
+	}
+	for (i = 1; info->argv[i]; i++)
+	{
+		p = _strchr(info->argv[i], '=');
+		if (p)
+			set_alias(info, info->argv[i]);
+		else
+			print_alias(node_starts_with(info->alias, info->argv[i], '='));
+	}
+
+	return (0);
+}
