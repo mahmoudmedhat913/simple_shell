@@ -25,6 +25,8 @@
 
 #define USE_GETLINE 0
 #define USE_STRTOK 0
+#define HISTORY ".simple_shell_history"
+#define MAXHISTORY 4096
 
 #define info_init {NULL, NULL, NULL, 0, 0, 0, 0, \
 	NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
@@ -170,7 +172,7 @@ int unsetenviron(info_t *, char *);
 char *gethistoryfile(info_t *info);
 int writeinhistory(info_t *info);
 int readfromhistory(info_t *info);
-int buildhistory(info_t *info, char *buffer, int linecount);
+int buildhistory(info_t *info, char *buffer, int count);
 int renumhistory(info_t *info);
 
 list_t *addnode(list_t **, const char *, int);
