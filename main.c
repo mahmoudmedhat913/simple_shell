@@ -29,7 +29,7 @@ int main(int argcount, char **argvec)
 				_errorputs(": 0: Can't open ");
 				_errorputs(argvec[1]);
 				_errorputchar('\n');
-				_errorputchar(buffer_FLUSH);
+				_errorputchar(BUFFER_FLUSH);
 				exit(127);
 			}
 			return (EXIT_FAILURE);

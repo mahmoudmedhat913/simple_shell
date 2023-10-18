@@ -14,7 +14,7 @@
 
 #define READ_BUFFER_SIZE 1024
 #define WRITE_BUFFER_SIZE 1024
-#define buffer_FLUSH -1
+#define BUFFER_FLUSH -1
 
 #define CMD_NORM 0
 #define CMD_OR 1

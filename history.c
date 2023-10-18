@@ -46,7 +46,7 @@ int writeinhistory(info_t *info)
 		_fdputs(n->str, fd);
 		_fdput('\n', fd);
 	}
-	_fdput(buffer_FLUSH, fd);
+	_fdput(BUFFER_FLUSH, fd);
 	close(fd);
 	return (1);
 }

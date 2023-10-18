@@ -53,7 +53,7 @@ ssize_t __getinput(info_t *info)
 	ssize_t r = 0;
 	char **str = &(info->arg), *p;
 
-	_putchar(buffer_FLUSH);
+	_putchar(BUFFER_FLUSH);
 	r = input_buf(info, &buffer, &length);
 	if (r == -1)
 		return (-1);
@@ -155,5 +155,5 @@ void handler(__attribute__((unused))int num)
 {
 	_puts("\n");
 	_puts("$ ");
-	_putchar(buffer_FLUSH);
+	_putchar(BUFFER_FLUSH);
 }

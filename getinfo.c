@@ -70,6 +70,6 @@ void freeinfo(info_t *info, int fre)
 		bfree((void **)info->cmdbuffer);
 		if (info->fdread > 2)
 			close(info->fdread);
-		_putchar(buffer_FLUSH);
+		_putchar(BUFFER_FLUSH);
 	}
 }

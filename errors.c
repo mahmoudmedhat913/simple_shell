@@ -27,12 +27,12 @@ int _errorputchar(char c)
 	static int i;
 	static char buffer[WRITE_BUFFER_SIZE];
 
-	if (c == buffer_FLUSH || i >= WRITE_BUFFER_SIZE)
+	if (c == BUFFER_FLUSH || i >= WRITE_BUFFER_SIZE)
 	{
 		write(2, buffer, i);
 		i = 0;
 	}
-	if (c != buffer_FLUSH)
+	if (c != BUFFER_FLUSH)
 		buffer[i++] = c;
 	return (1);
 }
@@ -48,12 +48,12 @@ int _fdput(char c, int fd)
 	static int i;
 	static char buffer[WRITE_BUFFER_SIZE];
 
-	if (c == buffer_FLUSH || i >= WRITE_BUFFER_SIZE)
+	if (c == BUFFER_FLUSH || i >= WRITE_BUFFER_SIZE)
 	{
 		write(fd, buffer, i);
 		i = 0;
 	}
-	if (c != buffer_FLUSH)
+	if (c != BUFFER_FLUSH)
 		buffer[i++] = c;
 	return (1);
 }
