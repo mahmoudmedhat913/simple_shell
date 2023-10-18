@@ -154,7 +154,7 @@ int history(info_t *);
 int alias(info_t *);
 
 ssize_t getinput(info_t *);
-int getline(info_t *, char **, size_t *);
+int _get_line(info_t *, char **, size_t *);
 void handler(int);
 void clearinfo(info_t *);
 void setinfo(info_t *, char **);
