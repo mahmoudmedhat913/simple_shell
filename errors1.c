@@ -106,7 +106,7 @@ char *convertnum(long int num, int b, int f)
 	p = &buffer[49];
 	*p = '\0';
 	do {
-		*--p = array[n % b];
+		*--p = arr[n % b];
 		n /= b;
 	} while (n != 0);
 	if (sign)
