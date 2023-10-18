@@ -68,6 +68,9 @@ void _puts(char *str)
 	}
 }
 
+
+
+
 /**
  * _putchar - write character to stdout
  * @c: character
