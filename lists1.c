@@ -18,9 +18,6 @@ size_t listlength(const list_t *h)
 	return (i);
 }
 
-
-
-
 /**
  * **listtostring - return array of strings
  * @h: address to head
