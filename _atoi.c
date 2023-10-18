@@ -1,36 +1,38 @@
 #include "shell.h"
 
 /**
- * interactive - returns treu if shell inter
+ * active - returns treu if shell inter
  * @info: struct address
  *
- * Return: 1 if interactive mode, 0 other
+ * Return: 1 or 0 for fail
  */
-int interactive(info_t *info)
+int active(info_t *info)
 {
-	return (isatty(STDIN_FILENO) && info->readfd <= 2);
+	return (isatty(STDIN_FILENO) && info->fdread <= 2);
 }
 
 /**
- * is_delim - checks if character is a delimeter
- * @c: the char to check
- * @delim: the delimeter string
- * Return: 1 if true, 0 othe
+ * isdelim - see if character is a delimeter
+ * @c: character
+ * @d: string
+ * Return: 1 or 0 for fail
  */
-int is_delim(char c, char *delim)
+int isdelim(char c, char *d)
 {
-	while (*delim)
-		if (*delime++ == c)
+	while (*d)
+	{
+		if (*d++ == c)
 			return (1);
+	}
 	return (0);
 }
 
 /**
- * _isalpha - checks for alphabet char
- * @c: the char to inp
- * Return: 1 if c is alph, 0 othe
+ * isalpha - check for alphabet char
+ * @c: character
+ * Return: 1 or 0 for fail
  */
-int _isalpha(int c)
+int isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
@@ -39,35 +41,35 @@ int _isalpha(int c)
 }
 
 /**
- * _atoi - converts a tr to an int
- * @s: the string to be conv
- * Return: 0 if no nums is int, converted num
+ * _atoi - converts a string to an int
+ * @str: string
+ * Return: converted no.
  */
 
-int _atoi(char *s)
+int _atoi(char *str)
 {
-	int i, sign = 1, flag = 0, output;
-	unsigned int result = 0;
+	int i, sign = 1, f = 0, conv;
+	unsigned int res = 0;
 
-	for (i = 0; s[i] != '\0' && flag != 2; i++)
+	for (i = 0; str[i] != '\0' && f != 2; i++)
 	{
-		if (s[i] == '-')
+		if (str[i] == '-')
 			sign *= -1;
 
-		if (s[i] >= '0' && s[i] <= '9')
+		if (str[i] >= '0' && str[i] <= '9')
 		{
-			flag = 1;
-			result *= 10;
-			result += (s[i] - '0');
+			f = 1;
+			res *= 10;
+			res += (str[i] - '0');
 		}
-		else if (flag == 1)
-			flag = 2;
+		else if (f == 1)
+			f = 2;
 	}
 
 	if (sign == -1)
-		output = -result;
+		conv = -res;
 	else
-		output = result;
+		conv = res;
 
-	return (output);
+	return (conv);
 }
