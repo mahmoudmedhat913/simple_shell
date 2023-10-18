@@ -51,9 +51,6 @@ int writeinhistory(info_t *info)
 	return (1);
 }
 
-
-
-
 /**
  * readfromhistory - read history
  * @info: param struct
