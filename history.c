@@ -10,7 +10,7 @@ char *gethistoryfile(info_t *info)
 {
 	char *buffer, *d;
 
-	d = getenv(info, "HOME=");
+	d = _getenv(info, "HOME=");
 	if (!d)
 		return (NULL);
 	buffer = malloc(sizeof(char) * (_strlen(d) + _strlen(HISTORY) + 2));
