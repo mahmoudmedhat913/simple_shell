@@ -13,9 +13,6 @@ void clearinfo(info_t *info)
 	info->path = NULL;
 }
 
-
-
-
 /**
  * setinfo - init struct
  * @info: param struct
