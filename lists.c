@@ -33,9 +33,6 @@ list_t *addnode(list_t **h, const char *s, int i)
 	return (new);
 }
 
-
-
-
 /**
  * *addendnode - add node at the end
  * @h: address to head
