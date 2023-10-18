@@ -147,6 +147,9 @@ int _get_line(info_t *info, char **str, size_t *len)
 	return (s);
 }
 
+
+
+
 /**
  * handler - blochs ctrl-c
  * @num: the signal no.
