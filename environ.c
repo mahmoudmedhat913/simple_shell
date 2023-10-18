@@ -11,6 +11,9 @@ int __env(info_t *info)
 	return (0);
 }
 
+
+
+
 /**
  * *_getenv - get value of env vars
  * @info: param struct
