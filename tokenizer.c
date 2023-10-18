@@ -83,7 +83,7 @@ char **strtow2(char *str, char s)
 		while (str[i] == s && str[i] != s)
 			i++;
 		k = 0;
-		while (str[i + k] != s && str[i + k])
+		while (str[i + k] != s && str[i + k] && str[i+k] != s)
 			k++;
 		c[j] = malloc((k + 1) * sizeof(char));
 		if (!c[j])
