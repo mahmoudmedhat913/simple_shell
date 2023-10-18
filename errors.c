@@ -17,9 +17,6 @@ void _errorputs(char *str)
 	}
 }
 
-
-
-
 /**
  * _errorputchar - write character to stderr
  * @c: character
