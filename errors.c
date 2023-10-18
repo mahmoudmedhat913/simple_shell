@@ -25,7 +25,7 @@ void _errorputs(char *str)
 int _errorputchar(char c)
 {
 	static int i;
-	static char bufffer[WRITE_BUFFER_SIZE];
+	static char buffer[WRITE_BUFFER_SIZE];
 
 	if (c == buffer_FLUSH || i >= WRITE_BUFFER_SIZE)
 	{
@@ -43,7 +43,7 @@ int _errorputchar(char c)
  * @fd: filedescriptor
  * Return: 1 or -1 for fail
  */
-inf _putfd(char c, int fd)
+int _putfd(char c, int fd)
 {
 	static int i;
 	static char buffer[WRITE_BUFFER_SIZE];
