@@ -51,7 +51,7 @@ list_t *addendnode(list_t **h, const char *s, int i)
 	new = malloc(sizeof(list_t));
 	if (!new)
 		return (NULL);
-	memset((void *)new, 0, sizeof(list_t));
+	__memset((void *)new, 0, sizeof(list_t));
 	new->num = i;
 	if (s)
 	{
