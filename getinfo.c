@@ -19,7 +19,7 @@ void clearinfo(info_t *info)
  * @argvec: argument vector
  */
 
-void setinfo(info_t *info, char *argvec)
+void setinfo(info_t *info, char **argvec)
 {
 	int i = 0;
 
@@ -60,7 +60,7 @@ void freeinfo(info_t *info, int fre)
 		if (!info->cmdbuffer)
 			free(info->arg);
 		if (info->env)
-			freelist(&(info->->env));
+			freelist(&(info->env));
 		if (info->history)
 			freelist(&(info->history));
 		if (info->alias)
