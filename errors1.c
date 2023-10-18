@@ -114,9 +114,6 @@ char *convertnum(long int num, int b, int f)
 	return (p);
 }
 
-
-
-
 /**
  * removecomment - function replace '#' with '\0'
  * @buffer: string
