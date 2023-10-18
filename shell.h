@@ -29,7 +29,7 @@
 #define HISTORY ".simple_shell_history"
 #define MAXHISTORY 4096
 
-#define info_init {NULL, NULL, NULL, 0, 0, 0, 0, \
+#define INFOINIT {NULL, NULL, NULL, 0, 0, 0, 0, \
 	NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
 
 extern char **environ;

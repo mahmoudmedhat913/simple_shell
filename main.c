@@ -9,7 +9,7 @@
 
 int main(int argcount, char **argvec)
 {
-	info_t info[] = { info_init };
+	info_t info[] = { INFOINIT };
 	int fd = 2;
 
 	asm ("mov %1, %0\n\t"
