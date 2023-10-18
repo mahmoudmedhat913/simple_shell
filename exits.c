@@ -30,9 +30,6 @@ char *_stringcpy(char *dest, char *source, int num)
 	return (str);
 }
 
-
-
-
 /**
  * *_stringcat - concatenate two strings
  * @first: first string
