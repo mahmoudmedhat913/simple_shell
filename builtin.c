@@ -74,9 +74,6 @@ int __cd(info_t *info)
 	return (0);
 }
 
-
-
-
 /**
  * __help - changes the current directory
  * @info: param struct
