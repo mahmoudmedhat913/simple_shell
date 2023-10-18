@@ -10,7 +10,7 @@
 
 list_t *addnode(list_t **h, const char *s, int i)
 {
-	list_t new;
+	list_t *new;
 
 	if (!h)
 		return (NULL);
@@ -41,7 +41,7 @@ list_t *addnode(list_t **h, const char *s, int i)
  * Return: size
  */
 
-list_t addendnode(list_t **h, const char *s, int i)
+list_t *addendnode(list_t **h, const char *s, int i)
 {
 	list_t *n, *new;
 
@@ -139,7 +139,7 @@ int deletenode(list_t **h, unsigned int i)
  * @h: address to head
  */
 
-void freelist(list_h **h)
+void freelist(list_t **h)
 {
 	list_t *next, *n, *p;
 
