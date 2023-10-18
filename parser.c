@@ -82,7 +82,7 @@ char *searchpath(info_t *info, char *p, char *cmd)
 				_strcat(pp, cmd);
 			}
 			if (iscmd(info, pp))
-				return (PP);
+				return (pp);
 			if (!p[i])
 				break;
 			now = i;
