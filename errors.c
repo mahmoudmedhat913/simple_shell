@@ -1,12 +1,10 @@
 #include "shell.h"
 
 /**
- * _eputs - prints an inp str
- * @str: the string to be print
- *
- * Return: Nothing
+ * _errorputs - print string
+ * @str: string
  */
-void _eputs(char *str)
+void _errorputs(char *str)
 {
 	int i = 0;
 
@@ -14,62 +12,58 @@ void _eputs(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_eputchar(str[i]);
+		_errorputchar(str[i]);
 		i++;
 	}
 }
 
 /**
- * _eputchar - writes the character c to stderr
- * @c: The char to print
- *
- * Return: on success 1.
- * On error, -1 is returnd, and erro is set appropri
+ * _errorputchar - write character to stderr
+ * @c: character
+ * Return: 1 or -1 for fail
  */
-int _eputchar(char c)
+int _errorputchar(char c)
 {
 	static int i;
-	static char buf[WRITE_BUF_SIZE];
+	static char bufffer[WRITE_BUFFER_SIZE];
 
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == buffer_FLUSH || i >= WRITE_BUFFER_SIZE)
 	{
-		write(2, buf, i);
+		write(2, buffer, i);
 		i = 0;
 	}
-	if (c != BUF_FLUSH)
-		buf[i++] = c;
+	if (c != buffer_FLUSH)
+		buffer[i++] = c;
 	return (1);
 }
 
 /**
- * _putfd - writes the character c to given fd
- * @c: The character to print
- * @fd: The filedescriptor to write to
- *
- * Return: on success 1.
- * on error, -1 is returned, and errno is set appropriately.
+ * _putfd - write character to given fd
+ * @c: character
+ * @fd: filedescriptor
+ * Return: 1 or -1 for fail
  */
 inf _putfd(char c, int fd)
 {
 	static int i;
-	static char buf[WRITE_BUF_SIZE];
+	static char buffer[WRITE_BUFFER_SIZE];
 
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == buffer_FLUSH || i >= WRITE_BUFFER_SIZE)
 	{
-		write(fd, buf, i);
+		write(fd, buffer, i);
 		i = 0;
 	}
-	if (c != BUF_FLUSH)
-		buf[i++] = c;
+	if (c != buffer_FLUSH)
+		buffer[i++] = c;
 	return (1);
 }
 
 /**
- * _putsfd - prints an input string
- * @str: the string to be printed
- * @fd: the filedesct to write to
+ * _putsfd - get input string
+ * @str: string
+ * @fd: filedescriptor
  *
- * Return: the number of chars put
+ * Return: the number of characters
  */
 int _putsfd(char *str, int fd)
 {
