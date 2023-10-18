@@ -52,7 +52,7 @@ char *startwith(const char *haystack, const char *needle)
 {
 	while (*needle)
 	{
-		if (*needle++ != *haystack)
+		if (*needle++ != *haystack++)
 			return (NULL);
 	}
 	return ((char *)haystack);
