@@ -50,9 +50,6 @@ char **strtow(char *str, char *s)
 	return (c);
 }
 
-
-
-
 /**
  * **strtow2 - split string to words
  * @str: string
