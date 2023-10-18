@@ -1,8 +1,5 @@
 #include "shell.h"
 
-
-
-
 /**
  * hsh - main
  * @info: param struct
