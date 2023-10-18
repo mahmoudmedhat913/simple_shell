@@ -27,11 +27,6 @@ int isdelim(char c, char *d)
 	return (0);
 }
 
-
-
-
-
-
 /**
  * isalpha - check for alphabet char
  * @c: character
