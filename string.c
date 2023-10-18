@@ -38,7 +38,7 @@ int _strcmp(char *str1, char *str2)
 	if (*str1 == *str2)
 		return (0);
 	else
-		return (*str1 < *str2 ? -1 : -1);
+		return (*str1 < *str2 ? -1 : 1);
 }
 
 /**
