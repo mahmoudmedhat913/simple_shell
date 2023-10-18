@@ -12,13 +12,13 @@ int env(info_t *info)
 }
 
 /**
- * *getenv - get value of env vars
+ * *_getenv - get value of env vars
  * @info: param struct
  * @name: name
  *
  * Return: value
  */
-char *getenv(info_t *info, const char *name)
+char *_getenv(info_t *info, const char *name)
 {
 	list_t *n = info->env;
 	char *s;
@@ -34,11 +34,11 @@ char *getenv(info_t *info, const char *name)
 }
 
 /**
- * setenv - init a new env var or modifiy one
+ * _set_env - init a new env var or modifiy one
  * @info: param struct
  * Return: 0
  */
-int setenv(info_t *info)
+int _set_env(info_t *info)
 {
 	if (info->argc != 3)
 	{
@@ -51,11 +51,11 @@ int setenv(info_t *info)
 }
 
 /**
- * unsetenv - delete enviroment
+ * _unset_env - delete enviroment
  * @info: param struct
  * Return: 0
  */
-int unsetenv(info_t *info)
+int _unset_env(info_t *info)
 {
 	int i;
 

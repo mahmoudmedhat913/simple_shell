@@ -5,7 +5,7 @@
  * @info: param struct
  * Return: exit
  */
-int exit(info_t *info)
+int __exit(info_t *info)
 {
 	int check;
 
@@ -32,7 +32,7 @@ int exit(info_t *info)
  * @info: param struct
  * Return: 0
  */
-int cd(info_t *info)
+int __cd(info_t *info)
 {
 	char *s, *dir, buffer[1024];
 	int ret;
@@ -42,33 +42,33 @@ int cd(info_t *info)
 		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!info->argv[1])
 	{
-		dir = getenv(info, "HOME=");
+		dir = _getenv(info, "HOME=");
 		if (!dir)
-			ret = chdir((dir = getenv(info, "PWD=")) ? dir : "/");
+			ret = chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			ret = chdir(dir);
 	}
 	else if (_strcmp(info->argv[1], "-") == 0)
 	{
-		if (!getenv(info, "OLDPWD="))
+		if (!_getenv(info, "OLDPWD="))
 		{
 			_puts(s);
 			_putchar('\n');
 			return (1);
 		}
-		_puts(getenv(info, "OLDPWD=")), _putchar('\n');
-		ret = chdir((dir = getenv(info, "OLDPWD=")) ? dir : "/");
+		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
+		ret = chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
 		ret = chdir(info->argv[1]);
 	if (ret == -1)
 	{
 		printerror(info, "can't cd to ");
-		_errorputs(info->argv[1], _errorputchar('\n');)
+		_errorputs(info->argv[1]), _errorputchar('\n');
 	}
 	else
 	{
-		setenviron(info, "OLDPWD", getenv(info, "PWD="));
+		setenviron(info, "OLDPWD", _getenv(info, "PWD="));
 		setenviron(info, "PWD", getcwd(buffer, 1024));
 	}
 	return (0);
@@ -79,7 +79,7 @@ int cd(info_t *info)
  * @info: param struct
  * Return: 0
  */
-int help(info_t *info)
+int __help(info_t *info)
 {
 	char **str;
 
