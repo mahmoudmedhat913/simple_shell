@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <limits.h>
 #include <fcntl.h>
+#include <errno.h>
 
 #define READ_BUFFER_SIZE 1024
 #define WRITE_BUFFER_SIZE 1024
@@ -132,9 +133,9 @@ char *_stringchr(char *, char);
 char **strtow(char *, char *);
 char **strtow_2(char *, char);
 
-char *memset(char *, char, unsigned int);
+char *__memset(char *, char, unsigned int);
 void ffree(char **);
-void *realloc(void *, unsigned int, unsigned int);
+void *__realloc(void *, unsigned int, unsigned int);
 int bfree(void **);
 int active(info_t *);
 int isdelim(char, char *);
@@ -147,23 +148,23 @@ int printd(int, int);
 char *convertnum(long int, int, int);
 void removecomment(char *);
 
-int exit(info_t *);
-int cd(info_t *);
-int help(info_t *);
-int history(info_t *);
-int alias(info_t *);
+int __exit(info_t *);
+int __cd(info_t *);
+int __help(info_t *);
+int __history(info_t *);
+int __alias(info_t *);
 
-ssize_t getinput(info_t *);
+ssize_t __getinput(info_t *);
 int _get_line(info_t *, char **, size_t *);
 void handler(int);
 void clearinfo(info_t *);
 void setinfo(info_t *, char **);
 void freeinfo(info_t *, int);
 
-char *getenv(info_t *, const char *);
+char *_getenv(info_t *, const char *);
 int env(info_t *);
-int setenv(info_t *);
-int unsetenv(info_t *);
+int _set_env(info_t *);
+int _unset_env(info_t *);
 int populateenv(info_t *);
 char **getenviron(info_t *);
 int setenviron(info_t *, char *, char *);
@@ -184,7 +185,7 @@ void freelist(list_t **);
 size_t listlength(const list_t *);
 char **listtostring(list_t *);
 size_t printlist(const list_t *);
-list_t nodestart(list_t *, char *, char);
+list_t *nodestart(list_t *, char *, char);
 ssize_t nodeindex(list_t *, list_t *);
 int ischain(info_t *, char *, size_t *);
 void checkchain(info_t *, char *, size_t *, size_t, size_t);

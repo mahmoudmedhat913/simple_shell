@@ -79,7 +79,7 @@ int _putchar(char c)
 	static int i;
 	static char buffer[WRITE_BUFFER_SIZE];
 
-	if (c == buffer_FLUSH || i >= WRITE_BUFFERSIZE)
+	if (c == buffer_FLUSH || i >= WRITE_BUFFER_SIZE)
 	{
 		write(1, buffer, i);
 		i = 0;

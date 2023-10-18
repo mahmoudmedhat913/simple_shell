@@ -18,7 +18,7 @@ int ischain(info_t *info, char *buffer, size_t *n)
 		i++;
 		info->cmdbuffertype = CMD_OR;
 	}
-	else if (buffer == '&' &&  buffer[i + 1] == '&')
+	else if (buffer[i] == '&' &&  buffer[i + 1] == '&')
 	{
 		buffer[i] = 0;
 		i++;

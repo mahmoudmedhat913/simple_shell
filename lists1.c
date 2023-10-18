@@ -78,14 +78,14 @@ size_t printlist(const list_t *h)
 }
 
 /**
- * nodestart - gives node that string start with prefix
+ * *nodestart - gives node that string start with prefix
  * @h: address to head
  * @str: string
  * @c: character
  * Return: the matched node or null
  */
 
-list_t nodestart(list_t *h, char *str, char c)
+list_t *nodestart(list_t *h, char *str, char c)
 {
 	char *p = NULL;
 
