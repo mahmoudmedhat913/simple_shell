@@ -162,7 +162,7 @@ void setinfo(info_t *, char **);
 void freeinfo(info_t *, int);
 
 char *_getenv(info_t *, const char *);
-int env(info_t *);
+int __env(info_t *);
 int _set_env(info_t *);
 int _unset_env(info_t *);
 int populateenv(info_t *);

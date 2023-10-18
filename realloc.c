@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * *memset - fill memory with a byte
+ * *__memset - fill memory with a byte
  * @n: pointer
  * @byte: byte
  * @c: amount of filled bytes
  * Return: pointer
  */
 
-char *memset(char *n, char byte, unsigned int c)
+char *__memset(char *n, char byte, unsigned int c)
 {
 	unsigned int i;
 
@@ -38,14 +38,14 @@ void ffree(char **str)
 }
 
 /**
- * *realloc - reallocate block of memory
+ * *__realloc - reallocate block of memory
  * @n: pointer
  * @old: old size
  * @new: new size
  * Return: pointer
  */
 
-void *realloc(void *n, unsigned int old, unsigned int new)
+void *__realloc(void *n, unsigned int old, unsigned int new)
 {
 	char *s;
 

@@ -17,8 +17,8 @@ int hsh(info_t *info, char **avec)
 		clearinfo(info);
 		if (active(info))
 			_puts("$ ");
-		_errorputchar(buffer_flush);
-		x = getinput(info);
+		_errorputchar(buffer_FLUSH);
+		x = __getinput(info);
 		if (x != -1)
 		{
 			setinfo(info, avec);
@@ -54,14 +54,14 @@ int searchbuiltin(info_t *info)
 {
 	int builtin = -1, i;
 	builtin_group built[] = {
-		{"exit", exit},
-		{"env", env},
-		{"help", help},
-		{"history", history},
-		{"setenv", setenv},
-		{"unsetenv", unsetenv},
-		{"cd", cd},
-		{"alias", alias},
+		{"exit", __exit},
+		{"env", __env},
+		{"help", __help},
+		{"history", __history},
+		{"setenv", _set_env},
+		{"unsetenv", _unset_env},
+		{"cd", __cd},
+		{"alias", __alias},
 		{NULL, NULL}
 	};
 
@@ -96,12 +96,12 @@ void searchcmd(info_t *info)
 	}
 	for (i = 0, j = 0; info->argv[i]; i++)
 	{
-		if (!isdelim(info->argv[i], "\t\n"))
+		if (!isdelim(info->arg[i], "\t\n"))
 			j++;
 	}
 	if (!j)
 		return;
-	path = searchpath(info, getenv(info, "PATH="), info->argv[0]);
+	path = searchpath(info, _getenv(info, "PATH="), info->argv[0]);
 	if (path)
 	{
 		info->path = path;
@@ -109,7 +109,7 @@ void searchcmd(info_t *info)
 	}
 	else
 	{
-		if ((active(info) || getenv(info, "PATH=")
+		if ((active(info) || _getenv(info, "PATH=")
 					|| info->argv[0][0] == '/') &&
 				iscmd(info, info->argv[0]))
 			forkcmd(info);
