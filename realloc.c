@@ -37,6 +37,9 @@ void ffree(char **str)
 	free(s);
 }
 
+
+
+
 /**
  * *__realloc - reallocate block of memory
  * @n: pointer
