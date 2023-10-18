@@ -1,74 +1,71 @@
 #include "shell.h"
 
 /**
- * *_strncpy - copies a string
- * @dest: the dest str to be copied to
- * @src: the src str
- * @n: the ammount of chars
- * Return: the conten
+ * *_stringcpy - copy string
+ * @dest: destination
+ * @source: source
+ * @num: the ammount of chars
+ * Return: concatenated string
  */
-char *_strncpy(char *dest, char *src, int n)
+char *_stringcpy(char *dest, char *source, int num)
 {
-	int i, j;
-	char *s = dest;
+	int i = 0, j;
+	char *str = dest;
 
-	i = 0;
-	while (src[i] != '\0' && i < n - 1)
+	while (source[i] != '\0' && i < num - 1)
 	{
-		dest[i] = src[i];
+		dest[i] = source[i];
 		i++;
 	}
-	if (i < n)
+	if (i < num)
 	{
 		j = i;
-		while (j < n)
+		while (j < num)
 		{
 			dest[j] = '\0';
 			j++;
 		}
 	}
-	return (s);
+	return (str);
 }
 
 /**
- * *_strncat - concatenates two strs
- * @dest: the firs str
- * @src: the second
- * @n: the amount of byts
- * Return: theconcate
+ * *_stringcat - concatenate two strings
+ * @first: first string
+ * @second: second string
+ * @num: amount of bytes
+ * Return: string
  */
-char *_strncat(char *dest, char *src, int n)
+char *_stringcat(char *first, char *second, int num)
 {
-	int i, j;
-	char *s = dest;
+	int i = 0, j = 0;
+	char *str = first;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+	while (first[i] != '\0')
 		i++;
-	while (src[j] != '\0' && j < n)
+	while (second[j] != '\0' && j < num)
 	{
-		dest[i] = src[j];
+		first[i] = second[j];
 		i++;
 		j++;
 	}
-	if (j < n)
-		dest[i] = '\0';
-	return (s);
+	if (j < num)
+		first[i] = '\0';
+	return (str);
 }
 
 /**
- * *_strchr - locates a char
- * @s: the string
- * @c: the char
- * Return: (s) a pointer
+ * *_stringchr - locate character
+ * @str: string
+ * @c: character
+ * Return: pointer
  */
-char *_strchr(char *s, char c)
+char *_stringchr(char *str, char c)
 {
 	do {
-		if (*s == c)
-			return (s);
-	} while (*s++ != '\0');
+		if (*str == c)
+			return (str);
+	} while (*str++ != '\0');
 
 	return (NULL);
 }
