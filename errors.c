@@ -38,12 +38,12 @@ int _errorputchar(char c)
 }
 
 /**
- * _putfd - write character to given fd
+ * _fdput - write character to given fd
  * @c: character
  * @fd: filedescriptor
  * Return: 1 or -1 for fail
  */
-int _putfd(char c, int fd)
+int _fdput(char c, int fd)
 {
 	static int i;
 	static char buffer[WRITE_BUFFER_SIZE];
@@ -59,13 +59,13 @@ int _putfd(char c, int fd)
 }
 
 /**
- * _putsfd - get input string
+ * _fdputs - get input string
  * @str: string
  * @fd: filedescriptor
  *
  * Return: the number of characters
  */
-int _putsfd(char *str, int fd)
+int _fdputs(char *str, int fd)
 {
 	int i = 0;
 
@@ -73,7 +73,7 @@ int _putsfd(char *str, int fd)
 		return (0);
 	while (*str)
 	{
-		i += _putfd(*str++, fd);
+		i += _fdput(*str++, fd);
 	}
 	return (i);
 }

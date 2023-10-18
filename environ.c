@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * env - print the current env
+ * __env - print the current env
  * @info: param struct
  * Return: Always 0
  */
-int env(info_t *info)
+int __env(info_t *info)
 {
 	printstringlist(info->env);
 	return (0);

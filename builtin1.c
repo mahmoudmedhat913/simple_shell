@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * history - display the history list
+ * __history - display the history list
  * @info: param struct
  * Return: 0
  */
-int history(info_t *info)
+int __history(info_t *info)
 {
 	printlist(info->history);
 	return (0);
@@ -23,7 +23,7 @@ int unsetalias(info_t *info, char *str)
 	char *p, c;
 	int ret;
 
-	p = _stringchr(str, "=");
+	p = _stringchr(str, '=');
 	if (!p)
 		return (1);
 	c = *p;
@@ -79,11 +79,11 @@ int printalias(list_t *n)
 }
 
 /**
- * alias - mimic alias builtin
+ * __alias - mimic alias builtin
  * @info: param struct
  * Return: 0
  */
-int alias(info_t *info)
+int __alias(info_t *info)
 {
 	int i = 0;
 	char *s = NULL;

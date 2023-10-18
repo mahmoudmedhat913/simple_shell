@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * exit - exit shell
+ * __exit - exit shell
  * @info: param struct
  * Return: exit
  */
@@ -28,7 +28,7 @@ int __exit(info_t *info)
 }
 
 /**
- * cd - change the current direct to process
+ * __cd - change the current direct to process
  * @info: param struct
  * Return: 0
  */
@@ -75,7 +75,7 @@ int __cd(info_t *info)
 }
 
 /**
- * help - changes the current directory
+ * __help - changes the current directory
  * @info: param struct
  * Return: 0
  */
