@@ -9,9 +9,10 @@
  */
 char *_stringcpy(char *dest, char *source, int num)
 {
-	int i = 0, j;
+	int i, j;
 	char *str = dest;
 
+	i = 0;
 	while (source[i] != '\0' && i < num - 1)
 	{
 		dest[i] = source[i];
@@ -38,9 +39,11 @@ char *_stringcpy(char *dest, char *source, int num)
  */
 char *_stringcat(char *first, char *second, int num)
 {
-	int i = 0, j = 0;
+	int i, j;
 	char *str = first;
 
+	i = 0;
+	j = 0;
 	while (first[i] != '\0')
 		i++;
 	while (second[j] != '\0' && j < num)
